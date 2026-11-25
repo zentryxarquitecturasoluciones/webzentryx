@@ -2,12 +2,10 @@
 
 Sitio web estático de Data Zentryx.
 
-- Dominio: `datazentryxarquitectsolutions.com`
-- Registros DNS en FreeDNS:
-  - `A` root → `216.198.79.1`
-  - `CNAME www` → `873171c31b0dd2a9.vercel-dns-017.com`
-- Despliegue: Vercel, proyecto `webzentryx`, equipo `zentryx5`.
+- Dominio: `datazentryx.ap-arquitectos.com`
+- DNS en FreeDNS: registro `A` de `datazentryx` → `216.198.79.1`
+- Despliegue: Vercel, proyecto `data-zentryx`, equipo `zentryx5`.
+- Repo: `https://github.com/zentryxarquitecturasoluciones/webzentryx`
+- URL alterna: `https://data-zentryx.vercel.app`
 
-El dominio está asignado en Vercel al proyecto `data-zentryx` (producción) y el root apunta a `www`.
-
-El dominio debe estar delegado en el registrador a `NS1.AFRAID.ORG`, `NS2.AFRAID.ORG`, `NS3.AFRAID.ORG` y `NS4.AFRAID.ORG` para que Vercel pueda verificarlo y emitir el certificado.
+El dominio está verificado y activo en Vercel con configuración válida y certificado TLS emitido.
