@@ -8,4 +8,6 @@ Sitio web estático de Data Zentryx.
   - `CNAME www` → `873171c31b0dd2a9.vercel-dns-017.com`
 - Despliegue: Vercel, proyecto `webzentryx`, equipo `zentryx5`.
 
+El dominio está asignado en Vercel al proyecto `data-zentryx` (producción) y el root apunta a `www`.
+
 El dominio debe estar delegado en el registrador a `NS1.AFRAID.ORG`, `NS2.AFRAID.ORG`, `NS3.AFRAID.ORG` y `NS4.AFRAID.ORG` para que Vercel pueda verificarlo y emitir el certificado.
