@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DATA ZENTRYX | Soluciones Integrales, Datos y Email Marketing Escalable</title>
+<meta name="description" content="Comunicamos tus servicios con el cliente ideal: email marketing escalable, datos empresariales segmentados, CRM, automatización, desarrollo web y arquitectura de soluciones.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:#000000;
+  --dark:#07120b;
+  --dark-2:#10291a;
+  --lime:#8def07;
+  --green:#4b8312;
+  --ink:#142016;
+  --muted:#5d6d5c;
+  --line:#e0e9d8;
+  --soft:#f5f8f1;
+  --white:#ffffff;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family:'Manrope',Arial,sans-serif; color:var(--ink); background:var(--white); line-height:1.65; -webkit-font-smoothing:antialiased; }
+a { color:inherit; text-decoration:none; }
+img { max-width:100%; height:auto; display:block; }
+a:focus-visible { outline:3px solid var(--green); outline-offset:3px; }
+.wrap { width:min(1140px,90%); margin:0 auto; }
+section { scroll-margin-top:80px; }
+
+.topbar { position:sticky; top:0; z-index:20; background:var(--black); border-bottom:1px solid rgba(141,239,7,.18); }
+.topbar .wrap { display:flex; flex-wrap:wrap; gap:1rem 1.5rem; align-items:center; justify-content:space-between; padding:.7rem 0; }
+.brand { display:flex; align-items:center; }
+.brand img { width:auto; height:42px; }
+.brand-fallback { display:none; font-weight:800; letter-spacing:.5px; font-size:1.05rem; color:var(--white); }
+.brand-fallback span { color:var(--lime); }
+nav { display:flex; flex-wrap:wrap; gap:.35rem 1.1rem; align-items:center; }
+nav a { color:#c9d4c5; font-size:.9rem; font-weight:600; transition:color .2s; }
+nav a:hover { color:var(--lime); }
+.nav-cta { background:var(--lime); color:#0a1405 !important; padding:.55rem 1rem; border-radius:6px; }
+
+.hero { position:relative; overflow:hidden; background:radial-gradient(circle at 85% 15%,rgba(141,239,7,.14),transparent 42%),linear-gradient(135deg,var(--dark) 0%,var(--dark-2) 100%); color:var(--white); padding:5.5rem 0 5rem; }
+.hero::after { content:""; position:absolute; right:-120px; bottom:-160px; width:420px; height:420px; border:1px solid rgba(141,239,7,.12); border-radius:50%; box-shadow:0 0 0 60px rgba(141,239,7,.03),0 0 0 120px rgba(141,239,7,.02); }
+.hero .wrap { position:relative; z-index:1; }
+.eyebrow { display:inline-block; color:var(--lime); font-size:.75rem; font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:1rem; }
+h1 { font-size:clamp(2.1rem,4.5vw,3.3rem); line-height:1.12; margin:0 0 1.2rem; max-width:940px; font-weight:800; }
+.lead { font-size:1.1rem; color:#dbe6d6; max-width:800px; margin:0 0 2rem; }
+.actions { display:flex; flex-wrap:wrap; gap:.8rem; }
+.btn { display:inline-block; background:var(--lime); color:#0a1405; padding:.9rem 1.5rem; border-radius:7px; font-weight:800; box-shadow:0 8px 24px rgba(141,239,7,.18); transition:transform .2s,box-shadow .2s; }
+.btn:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(141,239,7,.28); }
+.btn.ghost { background:transparent; border:2px solid var(--lime); color:var(--lime); box-shadow:none; }
+.marks { display:flex; flex-wrap:wrap; gap:2.2rem; margin-top:3.2rem; padding-top:1.6rem; border-top:1px solid rgba(141,239,7,.22); }
+.marks strong { display:block; font-size:1.5rem; color:var(--lime); }
+.marks small { color:#b9cbb4; font-size:.82rem; }
+
+section { padding:4.5rem 0; }
+section.alt { background:var(--soft); }
+h2 { font-size:clamp(1.6rem,2.8vw,2.15rem); line-height:1.2; color:var(--dark); margin:0 0 1rem; font-weight:800; }
+h3 { color:var(--dark); margin:0 0 .5rem; font-size:1.05rem; }
+p { margin:0 0 1rem; }
+.section-intro { color:var(--muted); max-width:800px; margin-bottom:2.2rem; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr)); gap:1.2rem; }
+.card { background:var(--white); border:1px solid var(--line); border-radius:12px; padding:1.6rem; box-shadow:0 6px 22px rgba(7,18,11,.04); }
+.card p { color:var(--muted); font-size:.93rem; margin:0; }
+.tag { display:inline-block; background:#eaf8d8; color:var(--green); border-radius:20px; padding:.2rem .7rem; font-size:.7rem; font-weight:800; letter-spacing:.6px; text-transform:uppercase; margin-bottom:.8rem; }
+.checks { list-style:none; padding:0; margin:1.4rem 0 0; display:grid; gap:.7rem; }
+.checks li { position:relative; padding-left:1.8rem; color:var(--muted); font-size:.94rem; }
+.checks li::before { content:"✓"; position:absolute; left:0; top:0; color:var(--green); font-weight:800; }
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1rem; margin-top:2rem; }
+.stat { background:var(--dark); color:var(--white); border-radius:12px; padding:1.5rem; }
+.stat strong { display:block; font-size:1.7rem; color:var(--lime); line-height:1.2; }
+.stat small { color:#b9cbb4; font-size:.85rem; }
+.split { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+.panel { background:linear-gradient(150deg,var(--dark),var(--dark-2)); color:var(--white); border-radius:14px; padding:2rem; }
+.panel h3 { color:var(--white); font-size:1.2rem; }
+.panel p { color:#c9d8c3; font-size:.94rem; }
+.chips { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.8rem; }
+.chip { background:var(--white); border:1px solid var(--line); border-radius:8px; padding:.5rem .8rem; font-size:.85rem; font-weight:700; color:var(--dark); }
+.legal { margin-top:1.6rem; color:var(--muted); font-size:.92rem; }
+.steps { counter-reset:n; list-style:none; padding:0; margin:1.8rem 0 0; }
+.steps li { position:relative; padding:0 0 1.4rem 3.6rem; }
+.steps li::before { counter-increment:n; content:counter(n); position:absolute; left:0; top:0; width:2.4rem; height:2.4rem; border-radius:50%; background:var(--dark); color:var(--lime); display:grid; place-items:center; font-weight:800; }
+.steps p { color:var(--muted); margin:.2rem 0 0; font-size:.93rem; }
+.quote { background:linear-gradient(90deg,#eaf8d8,#f7fcf0); border-left:5px solid var(--green); border-radius:10px; padding:2rem; font-size:1.12rem; color:var(--dark); font-weight:600; }
+.cta { background:linear-gradient(135deg,var(--dark-2),var(--dark)); color:var(--white); border-radius:16px; padding:3rem 2rem; text-align:center; }
+.cta h2 { color:var(--white); }
+.cta p { max-width:720px; margin:0 auto 1.4rem; color:#d3e0cd; }
+.cta .btn { box-shadow:none; }
+.cta a.mail { color:var(--lime); font-weight:800; border-bottom:1px solid rgba(141,239,7,.5); }
+.signature { margin-top:2rem; color:#b9cbb4; font-size:.9rem; }
+.signature strong { display:block; color:var(--white); }
+.contact-form { margin-top:1.8rem; background:rgba(255,255,255,.06); border:1px solid rgba(141,239,7,.22); border-radius:14px; padding:1.6rem; text-align:left; }
+.form-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+.field { display:flex; flex-direction:column; gap:.35rem; }
+.field.full { grid-column:1/-1; }
+.field label { color:#d3e0cd; font-size:.82rem; font-weight:700; }
+.field input, .field textarea { width:100%; border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.08); color:var(--white); border-radius:8px; padding:.8rem .9rem; font:inherit; }
+.field input::placeholder, .field textarea::placeholder { color:#9bad96; }
+.field textarea { min-height:110px; resize:vertical; }
+.field input:focus, .field textarea:focus { outline:none; border-color:var(--lime); box-shadow:0 0 0 3px rgba(141,239,7,.12); }
+.contact-form .btn { margin-top:1.2rem; border:0; cursor:pointer; font-family:inherit; }
+.contact-form .btn:disabled { opacity:.6; cursor:not-allowed; transform:none; }
+.form-status { min-height:1.4em; margin:.9rem 0 0; color:var(--lime); font-size:.9rem; font-weight:700; }
+.form-status.error { color:#ffb4a8; }
+.honeypot { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+.industry-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1.2rem; }
+.industry-card { background:var(--white); border:1px solid var(--line); border-radius:12px; padding:1.6rem; box-shadow:0 6px 22px rgba(7,18,11,.04); }
+.industry-card h3 { font-size:1.1rem; }
+.industry-card .checks { margin-top:1rem; }
+.industry-label { color:var(--muted); font-size:.8rem; font-weight:700; margin:1.2rem 0 .4rem; }
+.industry-product { background:#eaf8d8; border-left:4px solid var(--green); border-radius:8px; padding:.8rem 1rem; color:var(--dark); font-weight:700; font-size:.92rem; margin:0; }
+footer { background:var(--black); color:#a9b8a4; padding:2.5rem 0; text-align:center; font-size:.88rem; }
+footer img { width:190px; margin:0 auto 1rem; }
+footer a { color:var(--lime); }
+@media (max-width:800px) { .split { grid-template-columns:1fr; gap:2rem; } nav a:not(.nav-cta) { display:none; } .hero { padding:3.8rem 0 3.5rem; } .marks { gap:1.4rem; } .form-grid { grid-template-columns:1fr; } .contact-form { padding:1.2rem; } footer img { width:150px; } }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="DATA ZENTRYX">
+      <img src="logo-data-zentryx-web.png" alt="DATA ZENTRYX" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="brand-fallback">DATA<span>ZENTRYX</span><small>Consultoría y Arquitectura de Soluciones</small></span>
+    </a>
+    <nav>
+      <a href="#solucion">Solución</a>
+      <a href="#sistemas">Sistemas</a>
+      <a href="#datos">Datos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#industrias">Industrias</a>
+      <a href="#valor">Resultados</a>
+      <a class="nav-cta" href="#contacto">Solicitar propuesta</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero" id="inicio">
+  <div class="wrap">
+    <span class="eyebrow">Comunicamos tus servicios con el cliente ideal</span>
+    <h1>Soluciones integrales, datos y email marketing escalable</h1>
+    <p class="lead">Hola, ¿cómo estás? Queremos presentarte DATA ZENTRYX, una solución integral de marketing, tecnología y generación de clientes potenciales diseñada para ayudar a las empresas a llegar a prospectos calificados, generar nuevas oportunidades de venta y construir un sistema escalable de adquisición de clientes.</p>
+    <div class="actions">
+      <a class="btn" href="#contacto">Solicitar propuesta personalizada</a>
+      <a class="btn ghost" href="#servicios">Ver servicios</a>
+    </div>
+    <div class="marks">
+      <div><strong>50k–100k</strong><small>correos por campaña</small></div>
+      <div><strong>CRM</strong><small>prospectos y seguimiento</small></div>
+      <div><strong>Tiempo real</strong><small>respuestas y rendimiento</small></div>
+    </div>
+  </div>
+</div>
+
+<section id="solucion">
+  <div class="wrap">
+    <h2>Mucho más que email marketing tradicional</h2>
+    <p class="section-intro">Nuestro servicio va más allá del envío masivo de correos. Integramos email marketing, CRM, bases de datos empresariales de alta calidad, análisis en tiempo real, automatización, estrategia comercial, desarrollo web y sistemas personalizados en una sola solución.</p>
+    <div class="stats">
+      <div class="stat"><strong>50.000–100.000</strong><small>correos por campaña con calentamiento gradual</small></div>
+      <div class="stat"><strong>CRM integrado</strong><small>contactos, respuestas y oportunidades centralizados</small></div>
+      <div class="stat"><strong>En tiempo real</strong><small>registro y análisis del rendimiento de cada envío</small></div>
+    </div>
+    <div class="split" style="margin-top:3rem">
+      <div>
+        <h3>Infraestructura tecnológica adaptada a tu negocio</h3>
+        <p class="section-intro">Desarrollamos infraestructura tecnológica según las necesidades de cada empresa, con integración de CRM, registro de información en tiempo real y sistemas de acceso privado mediante usuario y contraseña.</p>
+        <ul class="checks">
+          <li>Organización de prospectos por segmento y etapa de compra.</li>
+          <li>Seguimiento de contactos, respuestas y reuniones.</li>
+          <li>Análisis de resultados para tomar mejores decisiones comerciales.</li>
+          <li>Entregabilidad con autenticación e higiene de lista.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Control total de tu operación</h3>
+        <p>Cada campaña alimenta el CRM y cada métrica informa la siguiente decisión: así convertimos la comunicación en un proceso comercial medible.</p>
+        <h3>Información cuando la necesitas</h3>
+        <p>Consulta respuestas, oportunidades y conversiones en tiempo real, con informes claros para tu equipo comercial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="sistemas">
+  <div class="wrap">
+    <h2>Sistemas de email marketing a la medida</h2>
+    <p class="section-intro">Diseñamos plataformas personalizadas según las necesidades de cada empresa, con acceso seguro, herramientas de administración, gestión de campañas y seguimiento de resultados.</p>
+    <div class="grid">
+      <div class="card"><span class="tag">Plataforma</span><h3>Desarrollo personalizado</h3><p>Sistemas de email marketing construidos alrededor de tus objetivos, tu equipo y tus procesos comerciales.</p></div>
+      <div class="card"><span class="tag">Seguridad</span><h3>Acceso privado</h3><p>Ingreso mediante usuario y contraseña para que tu información y la de tus prospectos permanezca bajo control.</p></div>
+      <div class="card"><span class="tag">Gestión</span><h3>Administración y resultados</h3><p>Administración de campañas, seguimiento de respuestas y métricas de rendimiento en un solo lugar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="datos">
+  <div class="wrap">
+    <h2>Datos empresariales de alta calidad</h2>
+    <p class="section-intro">Uno de nuestros principales diferenciales es la calidad de la información. Trabajamos para proporcionar datos frescos, actualizados y segmentados de acuerdo con las necesidades de cada campaña, evitando depender de bases de datos recicladas.</p>
+    <div class="grid">
+      <div class="card"><span class="tag">Identificación</span><h3>Empresa y decisor</h3><p>Nombre de la empresa, propietario y responsables de toma de decisiones, según la información disponible.</p></div>
+      <div class="card"><span class="tag">Contacto</span><h3>Datos de contacto</h3><p>Dirección comercial, teléfono y correo electrónico profesional publicados como información empresarial.</p></div>
+      <div class="card"><span class="tag">Segmentación</span><h3>Industria y ubicación</h3><p>Industria, categoría empresarial, ubicación geográfica y otros datos relevantes para campañas altamente segmentadas.</p></div>
+    </div>
+    <div class="chips">
+      <span class="chip">Nombre de la empresa</span>
+      <span class="chip">Propietario</span>
+      <span class="chip">Dirección comercial</span>
+      <span class="chip">Teléfono</span>
+      <span class="chip">Correo profesional</span>
+      <span class="chip">Decisores</span>
+      <span class="chip">Industria</span>
+      <span class="chip">Categoría empresarial</span>
+      <span class="chip">Ubicación geográfica</span>
+    </div>
+    <p class="legal">Trabajamos con datos empresariales públicos y verificados, respetando los requisitos de privacidad aplicables. No usamos listas compradas ni datos obtenidos por rastreo automático. Cada correo incluye identificación real del remitente, dirección postal válida y opción de baja visible.</p>
+  </div>
+</section>
+
+<section class="alt" id="servicios">
+  <div class="wrap">
+    <h2>¿Qué podemos hacer por tu empresa?</h2>
+    <p class="section-intro">Diez capacidades conectadas para cubrir todo el ciclo: identificar al prospecto, llegar con el mensaje correcto, hacer seguimiento y mejorar de forma continua.</p>
+    <div class="grid">
+      <div class="card"><span class="tag">01</span><h3>Generación de leads</h3><p>Identificamos y segmentamos prospectos que correspondan al perfil de cliente que tu empresa desea alcanzar.</p></div>
+      <div class="card"><span class="tag">02</span><h3>Email marketing profesional</h3><p>Desarrollamos campañas organizadas y estratégicas para ampliar el alcance comercial y conectar con clientes potenciales.</p></div>
+      <div class="card"><span class="tag">03</span><h3>Sistemas a la medida</h3><p>Creamos plataformas de email marketing con acceso seguro, administración de campañas y seguimiento de resultados.</p></div>
+      <div class="card"><span class="tag">04</span><h3>CRM y seguimiento en tiempo real</h3><p>Centralizamos prospectos, respuestas, seguimientos y oportunidades para mantener el control del proceso de ventas.</p></div>
+      <div class="card"><span class="tag">05</span><h3>Análisis de campañas</h3><p>Medimos aperturas, clics, respuestas, oportunidades y conversiones para identificar qué estrategias generan mejores resultados.</p></div>
+      <div class="card"><span class="tag">06</span><h3>Segmentación avanzada</h3><p>Campañas específicas según ubicación, industria, tipo de empresa, perfil del cliente y otros criterios comerciales relevantes.</p></div>
+      <div class="card"><span class="tag">07</span><h3>Automatización y seguimiento</h3><p>Secuencias automatizadas que mantienen la comunicación y evitan que una oportunidad se pierda después del primer contacto.</p></div>
+      <div class="card"><span class="tag">08</span><h3>Desarrollo web profesional</h3><p>Diseñamos y desarrollamos páginas web empresariales, plataformas digitales y soluciones personalizadas que generan confianza y apoyan el crecimiento comercial.</p></div>
+      <div class="card"><span class="tag">09</span><h3>Consultoría y arquitectura de soluciones</h3><p>Analizamos las necesidades de cada negocio para diseñar estrategias tecnológicas, comerciales y digitales que optimicen procesos y resultados.</p></div>
+      <div class="card"><span class="tag">10</span><h3>Estrategia y análisis comercial</h3><p>Utilizamos los resultados de las campañas para identificar nuevos mercados, segmentos y oportunidades de crecimiento.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="industrias">
+  <div class="wrap">
+    <h2>Industrias a las que servimos</h2>
+    <p class="section-intro">Cada sector tiene procesos, métricas y oportunidades distintas. Diseñamos soluciones de datos, automatización e inteligencia adaptadas a la operación de cada industria.</p>
+    <div class="industry-grid">
+
+      <article class="industry-card">
+        <span class="tag">01</span><h3>Inmobiliarias y bienes raíces</h3>
+        <p class="industry-label">Servicios que podemos ofrecer:</p>
+        <ul class="checks">
+          <li>CRM para administrar clientes y propiedades.</li>
+          <li>Automatización del seguimiento de prospectos.</li>
+          <li>Panel de ventas, alquileres y comisiones.</li>
+          <li>Predicción de demanda y análisis de precios.</li>
+          <li>Chatbot para responder consultas de clientes.</li>
+        </ul>
+        <p class="industry-label">Producto comercial</p>
+        <p class="industry-product">Sistema inteligente de gestión inmobiliaria.</p>
+      </article>
+
+      <article class="industry-card">
+        <span class="tag">02</span><h3>Salud y clínicas</h3>
+        <p class="industry-label">Servicios que podemos ofrecer:</p>
+        <ul class="checks">
+          <li>Automatización de citas y recordatorios.</li>
+          <li>Control administrativo de pacientes.</li>
+          <li>Indicadores de ocupación y productividad.</li>
+          <li>Análisis de ingresos y gastos.</li>
+          <li>Reportes de gestión.</li>
+        </ul>
+        <p class="industry-label">Producto comercial</p>
+        <p class="industry-product">Plataforma de inteligencia administrativa para clínicas.</p>
+      </article>
+
+      <article class="industry-card">
+        <span class="tag">03</span><h3>Construcción</h3>
+        <p class="industry-label">Servicios que podemos ofrecer:</p>
+        <ul class="checks">
+          <li>Control de presupuestos y costos.</li>
+          <li>Seguimiento de proyectos y cronogramas.</li>
+          <li>Control de materiales e inventarios.</li>
+          <li>Predicción de desviaciones presupuestarias.</li>
+          <li>Informes automáticos de avance.</li>
+        </ul>
+        <p class="industry-label">Producto comercial</p>
+        <p class="industry-product">Sistema de control y analítica de proyectos de construcción.</p>
+      </article>
+
+      <article class="industry-card">
+        <span class="tag">04</span><h3>Transporte y logística</h3>
+        <p class="industry-label">Servicios que podemos ofrecer:</p>
+        <ul class="checks">
+          <li>Control de flotas y operaciones.</li>
+          <li>Análisis de costos por vehículo.</li>
+          <li>Optimización de rutas.</li>
+          <li>Control de entregas.</li>
+          <li>Predicción de mantenimiento.</li>
+        </ul>
+        <p class="industry-label">Producto comercial</p>
+        <p class="industry-product">Plataforma de inteligencia logística.</p>
+      </article>
+
+      <article class="industry-card">
+        <span class="tag">05</span><h3>Limpieza y mantenimiento</h3>
+        <p class="industry-label">Servicios que podemos ofrecer:</p>
+        <ul class="checks">
+          <li>Automatización de órdenes de servicio.</li>
+          <li>Asignación de empleados y turnos.</li>
+          <li>Control de contratos.</li>
+          <li>Seguimiento de clientes.</li>
+          <li>Indicadores de productividad.</li>
+        </ul>
+        <p class="industry-label">Producto comercial</p>
+        <p class="industry-product">Sistema de administración de servicios y operaciones.</p>
+      </article>
+
+      <article class="industry-card">
+        <span class="tag">06</span><h3>Producción, entretenimiento y eventos</h3>
+        <p class="industry-label">Servicios que podemos ofrecer:</p>
+        <ul class="checks">
+          <li>Control de presupuestos de eventos.</li>
+          <li>Registro y seguimiento de asistentes.</li>
+          <li>Automatización de inscripciones.</li>
+          <li>Análisis de ventas de entradas.</li>
+          <li>Informes de rentabilidad.</li>
+        </ul>
+        <p class="industry-label">Producto comercial</p>
+        <p class="industry-product">Plataforma de gestión y analítica de eventos.</p>
+      </article>
+
+      <article class="industry-card">
+        <span class="tag">07</span><h3>Legal y financiero</h3>
+        <p class="industry-label">Servicios que podemos ofrecer:</p>
+        <ul class="checks">
+          <li>Automatización documental.</li>
+          <li>Seguimiento de clientes y expedientes.</li>
+          <li>Paneles financieros.</li>
+          <li>Control de facturación y cartera.</li>
+          <li>Reportes administrativos.</li>
+        </ul>
+        <p class="industry-label">Producto comercial</p>
+        <p class="industry-product">Sistema de automatización y control administrativo.</p>
+      </article>
+
+      <article class="industry-card">
+        <span class="tag">08</span><h3>Marketing y medios</h3>
+        <p class="industry-label">Servicios que podemos ofrecer:</p>
+        <ul class="checks">
+          <li>Análisis de campañas publicitarias.</li>
+          <li>Segmentación de clientes.</li>
+          <li>Predicción de conversiones.</li>
+          <li>Automatización de reportes.</li>
+          <li>Análisis de comportamiento comercial.</li>
+        </ul>
+        <p class="industry-label">Producto comercial</p>
+        <p class="industry-product">Plataforma de inteligencia comercial y marketing.</p>
+      </article>
+
+      <article class="industry-card">
+        <span class="tag">09</span><h3>Consultoría y servicios profesionales</h3>
+        <p class="industry-label">Servicios que podemos ofrecer:</p>
+        <ul class="checks">
+          <li>Automatización de procesos internos.</li>
+          <li>CRM y gestión de oportunidades.</li>
+          <li>Indicadores de desempeño.</li>
+          <li>Análisis de rentabilidad por cliente.</li>
+          <li>Integración de herramientas empresariales.</li>
+        </ul>
+        <p class="industry-label">Producto comercial</p>
+        <p class="industry-product">Consultoría de transformación digital y automatización.</p>
+      </article>
+
+      <article class="industry-card">
+        <span class="tag">10</span><h3>Belleza y estética</h3>
+        <p class="industry-label">Servicios que podemos ofrecer:</p>
+        <ul class="checks">
+          <li>Reservas y citas automatizadas.</li>
+          <li>Seguimiento de clientes.</li>
+          <li>Control de inventario.</li>
+          <li>Análisis de servicios más vendidos.</li>
+          <li>Campañas de fidelización.</li>
+        </ul>
+        <p class="industry-label">Producto comercial</p>
+        <p class="industry-product">Sistema inteligente de gestión de salones y centros estéticos.</p>
+      </article>
+
+      <article class="industry-card">
+        <span class="tag">11</span><h3>Alimentos y restaurantes</h3>
+        <p class="industry-label">Servicios que podemos ofrecer:</p>
+        <ul class="checks">
+          <li>Control de inventarios.</li>
+          <li>Análisis de ventas por producto.</li>
+          <li>Control de costos y desperdicios.</li>
+          <li>Predicción de demanda.</li>
+          <li>Automatización de pedidos.</li>
+        </ul>
+        <p class="industry-label">Producto comercial</p>
+        <p class="industry-product">Sistema de inteligencia operativa para restaurantes.</p>
+      </article>
+
+      <article class="industry-card">
+        <span class="tag">12</span><h3>Comercio y distribución</h3>
+        <p class="industry-label">Servicios que podemos ofrecer:</p>
+        <ul class="checks">
+          <li>Predicción de ventas.</li>
+          <li>Control de inventarios.</li>
+          <li>Análisis de clientes.</li>
+          <li>Automatización de pedidos.</li>
+          <li>Rentabilidad por producto.</li>
+        </ul>
+        <p class="industry-label">Producto comercial</p>
+        <p class="industry-product">Plataforma de inteligencia comercial y control de inventarios.</p>
+      </article>
+
+      <article class="industry-card">
+        <span class="tag">13</span><h3>Tecnología y soluciones digitales</h3>
+        <p class="industry-label">Servicios que podemos ofrecer:</p>
+        <ul class="checks">
+          <li>Desarrollo de aplicaciones web.</li>
+          <li>Integración de APIs.</li>
+          <li>Automatización con IA.</li>
+          <li>Arquitectura de datos.</li>
+          <li>Soluciones MLOps e infraestructura.</li>
+        </ul>
+        <p class="industry-label">Producto comercial</p>
+        <p class="industry-product">Arquitectura tecnológica y desarrollo de soluciones inteligentes.</p>
+      </article>
+
+      <article class="industry-card">
+        <span class="tag">14</span><h3>Educación y capacitación</h3>
+        <p class="industry-label">Servicios que podemos ofrecer:</p>
+        <ul class="checks">
+          <li>Seguimiento del rendimiento académico.</li>
+          <li>Automatización de matrículas.</li>
+          <li>Paneles de indicadores.</li>
+          <li>Gestión de estudiantes.</li>
+          <li>Reportes de asistencia y desempeño.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="valor">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <h2>Más clientes. Más oportunidades. Más ventas.</h2>
+        <p class="section-intro">El verdadero valor no está simplemente en enviar correos electrónicos. Está en construir un sistema completo, medible y escalable de adquisición de clientes.</p>
+        <ol class="steps">
+          <li><strong>Identificar a los prospectos adecuados</strong><p>Datos verificados y segmentados según tu cliente ideal.</p></li>
+          <li><strong>Presentar el mensaje correcto</strong><p>Contenido relevante por industria, ubicación y etapa de compra.</p></li>
+          <li><strong>Hacer seguimiento de cada oportunidad</strong><p>CRM, automatizaciones y tiempos de respuesta claros.</p></li>
+          <li><strong>Mejorar continuamente</strong><p>Decisiones basadas en métricas reales, no en suposiciones.</p></li>
+        </ol>
+      </div>
+      <div class="quote">Tu empresa tiene algo valioso que ofrecer. Nuestro trabajo es ayudarte a ponerlo frente a las personas que toman las decisiones, en el momento adecuado y con la estrategia correcta.</div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="contacto">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Agenda una reunión con DATA ZENTRYX</h2>
+      <p>Cuéntanos sobre tu empresa y tus objetivos. Registraremos tu solicitud y te contactaremos para coordinar una reunión personalizada sobre email marketing, Generación de leads, desarrollo web o arquitectura de soluciones.</p>
+      <form class="contact-form" id="meeting-form">
+        <div class="form-grid">
+          <div class="field">
+            <label for="meeting-name">Nombre</label>
+            <input id="meeting-name" name="name" type="text" autocomplete="name" placeholder="Tu nombre completo" maxlength="120" required>
+          </div>
+          <div class="field">
+            <label for="meeting-company">Nombre de empresa</label>
+            <input id="meeting-company" name="company" type="text" autocomplete="organization" placeholder="Nombre de tu empresa" maxlength="160" required>
+          </div>
+          <div class="field">
+            <label for="meeting-phone">Teléfono</label>
+            <input id="meeting-phone" name="phone" type="tel" autocomplete="tel" placeholder="+57 300 000 0000" maxlength="40">
+          </div>
+          <div class="field">
+            <label for="meeting-email">Correo electrónico</label>
+            <input id="meeting-email" name="email" type="email" autocomplete="email" placeholder="tu@empresa.com" maxlength="160" required>
+          </div>
+          <div class="field full">
+            <label for="meeting-notes">Observaciones</label>
+            <textarea id="meeting-notes" name="notes" placeholder="Cuéntanos qué necesitas o qué objetivo quieres alcanzar" maxlength="4000"></textarea>
+          </div>
+        </div>
+        <div class="honeypot" aria-hidden="true">
+          <label for="meeting-website">Sitio web</label>
+          <input id="meeting-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <button class="btn" id="meeting-submit" type="submit">Solicitar reunión</button>
+        <p class="form-status" id="meeting-status" role="status" aria-live="polite"></p>
+      </form>
+      <p><a class="mail" href="mailto:zentryxarquitecturadesoluciones@gmail.com">zentryxarquitecturadesoluciones@gmail.com</a></p>
+      <div class="signature"><strong>Cordial saludo, George</strong>DATA ZENTRYX | Consultoría y Arquitectura de Soluciones<br>Conectando empresas con nuevas oportunidades.</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="logo-data-zentryx-web.png" alt="DATA ZENTRYX">
+    <div><strong>DATA ZENTRYX</strong> · Consultoría y Arquitectura de Soluciones</div>
+    <div>Contacto: <a href="mailto:zentryxarquitecturadesoluciones@gmail.com">zentryxarquitecturadesoluciones@gmail.com</a></div>
+    <div>Servicio remoto · Reuniones por correo o videollamada</div>
+  </div>
+</footer>
+
+<script>
+  const meetingForm = document.getElementById("meeting-form")
+  const meetingStatus = document.getElementById("meeting-status")
+  const meetingSubmit = document.getElementById("meeting-submit")
+
+  meetingForm.addEventListener("submit", async function (event) {
+    event.preventDefault()
+    meetingStatus.textContent = ""
+    meetingStatus.classList.remove("error")
+    meetingSubmit.disabled = true
+    meetingSubmit.textContent = "Enviando..."
+
+    const data = new FormData(meetingForm)
+    const payload = {
+      name: data.get("name"),
+      company: data.get("company"),
+      phone: data.get("phone"),
+      email: data.get("email"),
+      notes: data.get("notes"),
+      website: data.get("website"),
+    }
+
+    try {
+      const response = await fetch("/api/meetings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+      const result = await response.json().catch(function () { return {} })
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "No se pudo registrar la solicitud")
+      }
+      meetingForm.reset()
+      meetingStatus.textContent = "Solicitud registrada. Te contactaremos pronto."
+    } catch (error) {
+      meetingStatus.textContent = error instanceof Error ? error.message : "No se pudo registrar la solicitud"
+      meetingStatus.classList.add("error")
+    } finally {
+      meetingSubmit.disabled = false
+      meetingSubmit.textContent = "Solicitar reunión"
+    }
+  })
+</script>
+</body>
+</html>
